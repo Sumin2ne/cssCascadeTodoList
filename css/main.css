@@ -7,12 +7,12 @@
     padding: 0;
 
     box-sizing: border-box;
+
 }
 
 
 
 body { 
-    
 
     font-size: 16px;
     background-color: rgba(22, 20, 20, 0.433);
@@ -34,40 +34,98 @@ header {
 
     font-size: 1.5em;   
     text-shadow: 1px 3px 1px rgb(157, 76, 76);
+
+    position: sticky;
+    z-index: 999;
+    top: -10px;
+    box-shadow: 0 -6px 10px 5px rgba(238, 238, 238, 0.5);
 }
 
 
-.main-header { text-align: center; padding: 10px; }
+#main-header { text-align: center; padding: 10px; }
 
 article { 
-    width: 25%; 
+    width: 27%; 
     border: 4px solid white; 
     border-radius: 8px; 
 
     display: inline-block;
-    margin: 10px 12px;
+    margin: 20px 15px;
 
     text-align: left;
 }
 
-main { text-align: center; }
+#todo {
+    margin-left: 20px;
+}
 
-article > h2 { color: gray;  padding: 4px 8px; }
+main {
+    margin-top: 20px;
+    text-align: center;
+}
 
-article:first-of-type { border: 4px solid gray; }
+footer {
+    background-color: black;
+}
 
-#inprogress { border: 4px solid rgb(80, 14, 14); }
-#inprogress h2 { color: red; }
+.listbox {
+    background-color: rgba(0, 0, 0, 0.52);
+    background-blend-mode: multiply;
+}
+
+article > h2 { color: rgb(245, 245, 245);  padding: 4px 8px; }
+
+.sub-header {
+    text-align: center;
+    padding: 10px;
+}
+article:first-of-type { border: 4px solid rgb(130, 0, 22); }
+
+#todo h2 { color: rgb(240, 54, 85); 
+    text-shadow: 1px 2px 1px rgb(120, 1, 1);} 
+
+#inprogress { border: 4px solid gray; }
+#inprogress h2 {color: white;
+    text-shadow: 1px 2px 1px rgb(147, 147, 147);}
 
 #done { border: 4px solid green; }
-#done h2 { color: green; }
+#done h2 { color: rgb(95, 204, 95); 
+    text-shadow: 1px 2px 1px rgb(40, 100, 49);}
 
 ul { list-style-type: none; }
 
-ul li { padding: 6px 8px; }
+ul li { padding: 6px 8px;
+    font-size: 20px;
+}
 
-.todo li:nth-child(odd) { background-color: rgba(255, 255, 255, 0.2)}
+.todo li:nth-child(odd){ background-color: rgba(255, 0, 0, 0.5)} 
 
-.inprogress li:nth-child(odd) { background-color: rgba(255, 0, 0, 0.5)}
+.inprogress li:nth-child(odd) { background-color: rgba(255, 255, 255, 0.2)}
 
-.done li:nth-child(odd) { background-color: rgba(0, 255, 0, 0.5)}
+.done li:nth-child(odd) { background-color: rgba(9, 120, 11, 0.5)}
+
+/* checkbox items styling */
+
+input[type="checkbox"] {
+    border-radius: 50%;
+    margin-right: 10px;}
+
+
+input[type="checkbox"]:checked + span::after {
+    content: '\1F60A' ;
+
+    position: absolute;
+    margin-left: 7px;
+    margin-top: 2px;
+
+    box-shadow: 0 2px 0  rgba(238, 238, 238, 0.5);
+
+    animation: fadeIn 0.7s;
+
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0;}
+    to{ opacity: 1;}
+}
